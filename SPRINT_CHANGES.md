@@ -145,7 +145,13 @@ Infrastructure changes during the sprint are recorded with times in
 
 ## Changes after the sprint (Oct 26, 2026)
 
-No script that produced a reported result was edited. Changes:
+No script that produced a reported result was edited in this
+cleanup. One later exception, logged under Post-deadline fixes
+below: on Oct 26 the live Modal URL in
+`code/run_scoring_parallel.sh`, `code/run_scoring_pact.sh`, and
+`code/run_evidence_parallel.sh` was replaced with a placeholder.
+That change came after every run and does not affect any result.
+Changes:
 
 - `results/` regrouped into `core/`, `evidence_views/`, `panel/`,
   `pact/` and `pilot/` (mapping above). The evidence-view score files
@@ -157,8 +163,10 @@ No script that produced a reported result was edited. Changes:
   `results/pilot/NOTES.md`, this file, and `SHA256SUMS`.
 - The report's Code and Data section said code and data were available
   on request. It now points to this repository (`report-draft.md` and
-  `report.tex`). `report.pdf` is the submitted version and was not
-  rebuilt.
+  `report.tex`). At cleanup time `report.pdf` was still the
+  submitted version. It was rebuilt on Oct 26 from the corrected
+  sources; see Post-deadline fixes below. The PDF held by the
+  organizers is still the submitted one.
 - A dated note in `results/extension_log.md` marks its Haiku section
   as written before the last refill.
 
