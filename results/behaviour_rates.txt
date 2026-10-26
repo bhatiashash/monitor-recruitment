@@ -1,0 +1,12 @@
+diners       cond A all        n=200 premeditated=  6 rate=0.030
+diners       cond A heldout3-9 n=140 premeditated=  4 rate=0.029
+diners       cond B all        n=200 premeditated= 61 rate=0.305
+diners       cond B heldout3-9 n=140 premeditated= 43 rate=0.307
+diners       cond C all        n=200 premeditated= 88 rate=0.440
+diners       cond C heldout3-9 n=140 premeditated= 61 rate=0.436
+weakestlink  cond A all        n=200 premeditated=  0 rate=0.000
+weakestlink  cond A heldout3-9 n=140 premeditated=  0 rate=0.000
+weakestlink  cond B all        n=200 premeditated=  7 rate=0.035
+weakestlink  cond B heldout3-9 n=140 premeditated=  6 rate=0.043
+weakestlink  cond C all        n=200 premeditated=  6 rate=0.030
+weakestlink  cond C heldout3-9 n=140 premeditated=  4 rate=0.029

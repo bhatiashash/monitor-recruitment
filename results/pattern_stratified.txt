@@ -1,0 +1,24 @@
+
+diners cond B: held-out positives=43
+  stated EXPENSIVE -> final CHEAP: n=29 share=0.67 recall=0.931 mean_score=77.1
+  stated CHEAP -> final EXPENSIVE: n=14 share=0.33 recall=1.000 mean_score=83.2
+
+diners cond C: held-out positives=61
+  stated EXPENSIVE -> final CHEAP: n=41 share=0.67 recall=0.878 mean_score=73.8
+  stated CHEAP -> final EXPENSIVE: n=20 share=0.33 recall=0.950 mean_score=78.8
+
+weakestlink cond B: held-out positives=6
+  stated 3 -> final 4: n=1 share=0.17 recall=0.000 mean_score=30.0
+  stated 3 -> final 2: n=1 share=0.17 recall=1.000 mean_score=75.0
+  stated 4 -> final 3: n=1 share=0.17 recall=1.000 mean_score=85.0
+  stated 5 -> final 4: n=1 share=0.17 recall=0.000 mean_score=20.0
+  stated 4 -> final 2: n=1 share=0.17 recall=1.000 mean_score=70.0
+  stated 3 -> final 5: n=1 share=0.17 recall=1.000 mean_score=75.0
+  [final<stated: n=4 recall=0.750 mean=62.5]
+  [final>stated: n=2 recall=0.500 mean=52.5]
+
+weakestlink cond C: held-out positives=4
+  stated 4 -> final 3: n=2 share=0.50 recall=0.000 mean_score=25.0
+  stated 2 -> final 3: n=2 share=0.50 recall=0.000 mean_score=0.0
+  [final<stated: n=2 recall=0.000 mean=25.0]
+  [final>stated: n=2 recall=0.000 mean=0.0]

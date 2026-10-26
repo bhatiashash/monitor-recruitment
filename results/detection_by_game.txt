@@ -1,0 +1,9 @@
+diners       A: n=140 pos=4 recall=1.0 FPR=0.059 mean_score_pos=82.5
+diners       B: n=140 pos=43 recall=0.953 FPR=0.052 mean_score_pos=79.1
+diners       C: n=140 pos=61 recall=0.902 FPR=0.076 mean_score_pos=75.4
+weakestlink  A: n=140 pos=0 recall=None FPR=0.071 mean_score_pos=None
+weakestlink  B: n=140 pos=6 recall=0.667 FPR=0.037 mean_score_pos=59.2
+weakestlink  C: n=140 pos=4 recall=0.0 FPR=0.037 mean_score_pos=12.5
+exploratory 1% threshold: 76
+cond B recall@1%: 0.633 (pos=49)
+cond C recall@1%: 0.569 (pos=65)
