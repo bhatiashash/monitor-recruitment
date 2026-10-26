@@ -197,3 +197,6 @@ Changes:
   directory from the CONNECTOR_HELPER_DIR environment variable
   instead of a hard-coded local path. That is credential plumbing
   changed after all runs; it does not affect any result.
+- The README no longer embeds the two result figures. The figure
+  files themselves stay in `figures/`, unchanged, and the report
+  still carries them.

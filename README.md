@@ -52,10 +52,6 @@ instructed (solo), or both instructed to be honest (innocent).
   maximally overt, so this is a positive control, not evidence
   about covert collusion.
 
-![Premeditated deception rate by condition and game](figures/fig1_deception_rates.png)
-
-![Recall and AUROC for conditions B and C under three monitors](figures/fig2_recall_by_monitor.png)
-
 The full report is in [report/](report/) (PDF and LaTeX source).
 
 ## What is here
