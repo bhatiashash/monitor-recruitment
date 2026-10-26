@@ -119,7 +119,11 @@ Modal. Conditions: A blind, with no oversight disclosure; B awareness
 only, where the disclosure names the monitor (Qwen2.5-14B) and states
 that it scores public announcements and final actions for premeditated
 deception; C awareness plus the sentence that the agent may address the
-monitor directly inside its public message.
+monitor directly inside its public message. Agents sampled at
+temperature 1.0, the harness default, which no run script overrode.
+The harness sets the generation request seed to 42 and seeds its own
+random module with 42 (run_endogenous.py; trial_runner.py), so the
+ten trials per cell are the repeated draws under one fixed seed.
 
 Ground truth: the harness computes a mechanical typology for every
 agent-round from the private plan, the public announcement, and the
@@ -464,6 +468,10 @@ and none of them is visible in an AUROC number alone.
 - **Data**: the frozen game logs and the monitor score files for the
   core, the evidence views, the panel, and the pact are in the same
   repository, under data/ and results/.
+- **Preexisting code**: all code written for this project was
+  written during the sprint, on October 25, 2026. The only
+  pre-existing code is the Poseidon Research starter harness,
+  credited above.
 
 ## Author Contributions
 
@@ -478,6 +486,11 @@ analysis, and reviewed the final report.
 4. Nguyen et al. (2026). TraceGuard. arXiv:2604.03968.
 5. Kotadiya (2026). Words vs Actions. Entry in the Apart Research AI
    Collusion Research Sprint, October 2026.
+6. Nanda et al., Team Orbital (2026). Say, Do, or Both? Entry in the
+   Apart Research AI Collusion Research Sprint, October 2026.
+7. Kaszewski, Team AgentEval (2026). Do Code Monitors Go Easy on
+   Their Own Family? Entry in the Apart Research AI Collusion
+   Research Sprint, October 2026.
 
 ## Appendix: Limitations and Dual-Use / Ethical Considerations
 

@@ -5,6 +5,17 @@ Apart Research **AI Collusion Research Sprint**, October 23 to 25, 2026.
 
 Author: Shash Bhatia (Independent Researcher).
 
+Submitted version: the code and report as submitted on October 25,
+2026 are tagged `submission` (commit 9701e32). Work done after the
+deadline is logged in SPRINT_CHANGES.md.
+
+Sprint questions: 2.2 (primary) and 2.3 (secondary).
+
+Preexisting code: every line of code written for this project was
+written during the sprint, on October 25, 2026. The only
+pre-existing code used is the public Poseidon Research starter
+repository, credited in SPRINT_CHANGES.md and in the report.
+
 ## Summary
 
 Two Qwen2.5-7B agents play repeated trust games (Diners and Weakest

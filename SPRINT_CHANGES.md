@@ -161,3 +161,18 @@ No script that produced a reported result was edited. Changes:
   rebuilt.
 - A dated note in `results/extension_log.md` marks its Haiku section
   as written before the last refill.
+
+## Post-deadline fixes (October 26, 2026)
+
+- Stopped the Modal apps monitor-serve and hackathon-serve. The
+  monitor-serve URL appeared in three run scripts and the app had
+  no authentication; the scripts now carry a YOUR-WORKSPACE
+  placeholder instead of the live address.
+- README: added the submitted-version pointer (tag `submission`),
+  the sprint questions (2.2 primary, 2.3 secondary), and the
+  preexisting-code statement.
+- Report: added the two missing reference entries (Say, Do, or
+  Both?; the AgentEval entry), the agent sampling settings in
+  Methods (temperature 1.0, request seed 42, harness random seed
+  42), and the preexisting-code line in Code and Data. The PDF was
+  rebuilt from the corrected source.

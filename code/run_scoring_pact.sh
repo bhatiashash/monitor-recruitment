@@ -5,7 +5,7 @@
 set -u
 cd ~/workspace/sprint/monitor
 
-export LLM_BASE_URL="https://bhatiashash--monitor-serve-serve.us-east.modal.run/v1"
+export LLM_BASE_URL="https://YOUR-WORKSPACE--monitor-serve-serve.us-east.modal.run/v1"
 # The endpoint is unauthenticated; monitor.py requires a non-empty key value.
 export LLM_API_KEY="EMPTY"
 
