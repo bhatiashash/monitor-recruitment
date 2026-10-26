@@ -205,3 +205,7 @@ Changes:
   `code/collect_numbers.py` now also writes those score counts to
   `results/numbers.json`, and `code/make_figures.py` draws the
   figure from them. No existing number changed.
+- The `report/` folder is no longer tracked and is listed in
+  `.gitignore`, so the report lives only on the author's machine. The
+  report as submitted on October 25 stays in the history under
+  `report/` at the `submission` tag. The README points there.

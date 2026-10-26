@@ -1,6 +1,6 @@
 # Does inviting agents to speak to their monitor change their behavior and make the monitor easier to mislead?
 
-Experiment code, frozen logs, scores, and the report for an entry to the
+Experiment code, frozen logs, and scores for an entry to the
 Apart Research **AI Collusion Research Sprint**, October 23 to 25, 2026.
 
 Author: Shash Bhatia (Independent Researcher).
@@ -52,7 +52,8 @@ instructed (solo), or both instructed to be honest (innocent).
   maximally overt, so this is a positive control, not evidence
   about covert collusion.
 
-The full report is in [report/](report/) (PDF and LaTeX source).
+The report is not kept in this repository. The version submitted on
+October 25, with its PDF and source, is under [`report/` at the `submission` tag](https://github.com/bhatiashash/monitor-recruitment/tree/submission/report).
 
 ## What is here
 
@@ -71,7 +72,6 @@ The full report is in [report/](report/) (PDF and LaTeX source).
 | `results/numbers.json` | Every number in the report, recomputed from the files above by `code/collect_numbers.py`. |
 | `results/extension_log.md` | Notes written during the sprint evening for the extension and panel runs. |
 | `figures/` | Figures drawn by `code/make_figures.py`. |
-| `report/` | Report, corrected Oct 26 (as submitted: tag `submission`): `report.pdf`, `report.tex`, `report-draft.md`. |
 | `SHA256SUMS` | Checksums of the published files. |
 
 `results/core/`, `evidence_views/`, `panel/` and `pact/` each have a `SUMMARY.md` with the main table.
@@ -158,18 +158,9 @@ repo's layout.
    python3 code/collect_numbers.py && python3 code/make_figures.py
    ```
 
-7. Rebuild the report PDF from the draft:
-
-   ```bash
-   python3 code/build_tex.py && cd report && pdflatex report.tex
-   ```
-
-   `code/build_tex.py` converts `report/report-draft.md` into
-   `report/report.tex`. It needs pandoc and the Python package
-   pypandoc: install pandoc with your package manager, then run
-   `pip install pypandoc` (or `pip install pypandoc_binary`, which
-   bundles pandoc). The script resolves both paths from its own
-   location, so it runs from any checkout of this repo.
+The report source is not in this repository, so `code/build_tex.py`
+needs a local `report/report-draft.md` to run. The submitted source is
+under `report/` at the `submission` tag.
 
 Model outputs are sampled, so new games will differ. The saved files
 are the ones the report uses. API keys are read from environment
