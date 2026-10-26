@@ -9,7 +9,7 @@ Submitted version: the code and report as submitted on October 25,
 2026 are tagged `submission` (commit 9701e32). Work done after the
 deadline is logged in SPRINT_CHANGES.md.
 
-Sprint questions: 2.2 (primary) and 2.3 (secondary).
+Track 2, Detection and Audit of Collusion; question 2.2: *does combining what agents say with what they do beat either alone?* (2.3 secondary).
 
 Preexisting code: every line of code written for this project was
 written during the sprint, on October 25, 2026. The only
@@ -75,7 +75,7 @@ The full report is in [report/](report/) (PDF and LaTeX source).
 | `results/numbers.json` | Every number in the report, recomputed from the files above by `code/collect_numbers.py`. |
 | `results/extension_log.md` | Notes written during the sprint evening for the extension and panel runs. |
 | `figures/` | Figures drawn by `code/make_figures.py`. |
-| `report/` | Submission report: `report.pdf`, `report.tex`, `report-draft.md`. |
+| `report/` | Report, corrected Oct 26 (as submitted: tag `submission`): `report.pdf`, `report.tex`, `report-draft.md`. |
 | `SHA256SUMS` | Checksums of the published files. |
 
 `results/core/`, `evidence_views/`, `panel/` and `pact/` each have a `SUMMARY.md` with the main table.
@@ -161,6 +161,17 @@ repo's layout.
    ```bash
    python3 code/collect_numbers.py && python3 code/make_figures.py
    ```
+
+7. Rebuild the report PDF from the draft:
+
+   ```bash
+   python3 code/build_tex.py && cd report && pdflatex report.tex
+   ```
+
+   `code/build_tex.py` converts `report/report-draft.md` into
+   `report/report.tex`. It uses the sprint workspace paths at the top
+   of the file; the mapping to this repo's layout is in
+   SPRINT_CHANGES.md.
 
 Model outputs are sampled, so new games will differ. The saved files
 are the ones the report uses. API keys are read from environment
