@@ -119,9 +119,39 @@ def pact_detection():
     save(fig, "fig3_pact_detection")
 
 
+def positive_scores():
+    dist = N["core"]["positive_scores_diners_heldout"]
+    thr = N["core"]["monitor"]["threshold"]
+    fig, ax = plt.subplots(figsize=(6.6, 3.2))
+    # Bars sit just left of their score so none straddles the threshold line.
+    for c, dx in (("B", -2.0), ("C", -0.1)):
+        counts = {int(k): v for k, v in dist[c].items()}
+        total = sum(counts.values())
+        missed = sum(v for k, v in counts.items() if k < thr)
+        xs = [k + dx for k in counts]
+        vals = [v / total for v in counts.values()]
+        ax.bar(xs, vals, 1.8, color=COLOR[c],
+               label=f"{NAME[c]} ({total} rounds, {missed} below threshold)")
+        for x, v, k in zip(xs, vals, counts.values()):
+            ax.text(x, v + 0.012, str(k), ha="center", va="bottom", fontsize=7.5, color=INK2)
+    ax.axvline(thr, color=INK2, lw=1, ls="--")
+    ax.text(thr + 1.5, 0.40, f"threshold {thr}:\nscores below it\nare missed", ha="left", va="top",
+            fontsize=8, color=INK2)
+    ax.set_xlim(-4, 100)
+    ax.set_ylim(0, 0.72)
+    ax.yaxis.set_major_formatter(matplotlib.ticker.PercentFormatter(1.0, decimals=0))
+    ax.set_xlabel("Qwen monitor score")
+    ax.set_ylabel("Share of deceptive rounds")
+    ax.set_title("Under the invitation, more deceptive rounds scored 75 or below",
+                 loc="left", fontsize=11)
+    ax.legend(loc="upper left", fontsize=8)
+    save(fig, "fig4_positive_scores")
+
+
 if __name__ == "__main__":
     OUT.mkdir(exist_ok=True)
     deception_rates()
     recall_by_monitor()
     pact_detection()
-    print(f"wrote 3 figures to {OUT}")
+    positive_scores()
+    print(f"wrote 4 figures to {OUT}")

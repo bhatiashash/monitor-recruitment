@@ -200,3 +200,8 @@ Changes:
 - The README no longer embeds the two result figures. The figure
   files themselves stay in `figures/`, unchanged, and the report
   still carries them.
+- New figure `figures/fig4_positive_scores.png`: the Qwen monitor's
+  scores on held-out Diners deceptive rounds, conditions B and C.
+  `code/collect_numbers.py` now also writes those score counts to
+  `results/numbers.json`, and `code/make_figures.py` draws the
+  figure from them. No existing number changed.
