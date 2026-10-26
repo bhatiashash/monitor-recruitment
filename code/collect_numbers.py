@@ -22,7 +22,7 @@ import glob
 import json
 import pathlib
 import sys
-from collections import defaultdict
+from collections import Counter, defaultdict
 
 CODE = pathlib.Path(__file__).resolve().parent
 ROOT = CODE.parent
@@ -231,6 +231,11 @@ def main():
     n["core"]["uptake"] = uptake()
     n["core"]["fpr_by_negative_type"] = fpr_by_negative_type(qwen_rows, typ, qwen["threshold"])
     n["core"]["pattern_stratified_diners"] = pattern_stratified(qwen_rows, qwen["threshold"])
+    n["core"]["positive_scores_diners_heldout"] = {
+        c: dict(sorted(Counter(r["score"] for r in qwen_rows
+                               if r["condition"] == c and r["game"] == "diners"
+                               and r["trial"] not in CALIB_TRIALS and r["positive"]).items()))
+        for c in ("B", "C")}
     t1, _ = calibrate(qwen_rows, 0.01)
     held = [r for r in qwen_rows if r["trial"] not in CALIB_TRIALS]
     n["core"]["exploratory_1pct"] = {
