@@ -5,11 +5,13 @@ block, With Apart Research, Abstract, numbered sections 1 to 6, then
 unnumbered Code and Data, Author Contributions, References,
 Appendix, and LLM Usage Statement."""
 import re
+from pathlib import Path
 
 import pypandoc
 
-SRC = "/home/hatch/workspace/sprint/monitor/report-draft.md"
-OUT = "/home/hatch/workspace/sprint/monitor/report.tex"
+REPO = Path(__file__).resolve().parent.parent
+SRC = str(REPO / "report" / "report-draft.md")
+OUT = str(REPO / "report" / "report.tex")
 
 text = open(SRC).read()
 title = text.split("\n", 1)[0].removeprefix("# ").strip()

@@ -169,9 +169,11 @@ repo's layout.
    ```
 
    `code/build_tex.py` converts `report/report-draft.md` into
-   `report/report.tex`. It uses the sprint workspace paths at the top
-   of the file; the mapping to this repo's layout is in
-   SPRINT_CHANGES.md.
+   `report/report.tex`. It needs pandoc and the Python package
+   pypandoc: install pandoc with your package manager, then run
+   `pip install pypandoc` (or `pip install pypandoc_binary`, which
+   bundles pandoc). The script resolves both paths from its own
+   location, so it runs from any checkout of this repo.
 
 Model outputs are sampled, so new games will differ. The saved files
 are the ones the report uses. API keys are read from environment

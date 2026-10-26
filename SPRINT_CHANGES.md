@@ -184,3 +184,9 @@ Changes:
   Methods (temperature 1.0, request seed 42, harness random seed
   42), and the preexisting-code line in Code and Data. The PDF was
   rebuilt from the corrected source.
+- `code/build_tex.py` now resolves its input and output paths from
+  its own location inside this repo. It pointed at the sprint
+  workspace before, so the report rebuild failed on any other
+  machine. The README rebuild step now lists the pandoc and
+  pypandoc dependencies. The script produced no results, and its
+  output is unchanged.
