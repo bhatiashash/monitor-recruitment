@@ -89,6 +89,13 @@ Raw outputs: full_scores_pact_gpt5/, table in gpt5_pact_results.txt.
 
 ## Haiku 4.5 rescore of the core and the pact logs (OpenRouter)
 
+Note added Oct 26, 2026: this section was written before the second
+Haiku refill finished. The final files cover all 1,200 core and 1,200
+pact rounds, and the final numbers differ slightly (for example,
+condition B has 49 positives and recall 0.755, not 48 and 0.771).
+The three-monitor comparison below, the report, and
+results/panel/SUMMARY.md use the final numbers.
+
 Monitor: anthropic/claude-haiku-4.5 through OpenRouter, same frozen
 prompt and inputs, temperature 0. Its own calibration on condition A
 trials 0 to 2, 118 negatives, 5 percent target, set the threshold at

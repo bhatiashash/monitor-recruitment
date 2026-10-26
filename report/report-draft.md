@@ -459,11 +459,11 @@ and none of them is visible in an AUROC number alone.
   starter repository,
   https://github.com/poseidon-research/collusion_hackathon. The
   disclosure patch, the pact patch, the monitor, the scorers, and
-  the analysis scripts were written for this sprint and are
-  available from the author on request.
+  the analysis scripts written for this sprint are at
+  https://github.com/bhatiashash/monitor-recruitment.
 - **Data**: the frozen game logs and the monitor score files for the
-  core, the evidence views, the panel, and the pact are available
-  from the author on request.
+  core, the evidence views, the panel, and the pact are in the same
+  repository, under data/ and results/.
 
 ## Author Contributions
 
