@@ -526,7 +526,7 @@ analysis, and reviewed the final report.
 
 ## LLM Usage Statement
 
-An AI assistant (Muse, by Meta) helped write the experiment and
+An AI assistant helped write the experiment and
 analysis code, run the scoring pipelines, and draft this report. The
 author designed and froze every experiment before the runs, made all
 design and interpretation decisions, and verified every number in

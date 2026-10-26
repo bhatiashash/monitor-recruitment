@@ -65,7 +65,7 @@ marked as added after it.
 
 | File | Purpose |
 |---|---|
-| `monitor_openrouter.py` | Calls the frozen prompt through OpenRouter for GPT-5 mini (default) or Claude Haiku 4.5 (`--model`). It imports the prompt and parser from `monitor.py`. Credentials came from the sprint assistant's connector (`/opt/muse/...`), not from an environment variable; see Reproduce in the README. |
+| `monitor_openrouter.py` | Calls the frozen prompt through OpenRouter for GPT-5 mini (default) or Claude Haiku 4.5 (`--model`). It imports the prompt and parser from `monitor.py`. Credentials came from a locally stored connector credential (custom.openrouter), exchanged at run time by a helper outside this repo, not from an environment variable; see Reproduce in the README. |
 | `run_scoring_gpt5.sh` | GPT-5 mini over the six core cells. |
 | `run_scoring_pact_gpt5.sh` | GPT-5 mini over the six pact cells. |
 | `run_scoring_haiku.sh` | First Haiku pass, sequential. |
@@ -190,3 +190,10 @@ Changes:
   machine. The README rebuild step now lists the pandoc and
   pypandoc dependencies. The script produced no results, and its
   output is unchanged.
+- Product names removed. The report's LLM usage statement now says
+  "an AI assistant" without naming a product; the disclosure itself
+  is unchanged, because the sprint asks for an accurate account of
+  AI use. `code/monitor_openrouter.py` takes its connector helper
+  directory from the CONNECTOR_HELPER_DIR environment variable
+  instead of a hard-coded local path. That is credential plumbing
+  changed after all runs; it does not affect any result.

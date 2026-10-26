@@ -2,9 +2,10 @@
 """GPT-5 mini rescore of the frozen core logs through OpenRouter.
 
 Same frozen monitor system prompt, same public-record inputs, same output
-format as monitor.py. The credential comes from the Muse vault connector
-custom.openrouter via the surrogate exchange; no key is read from disk or
-environment. Temperature 0, verified accepted by the service on Oct 25.
+format as monitor.py. The API credential is supplied at run time by a
+local connector helper (the custom.openrouter connector) through a
+surrogate exchange; no key is read from disk or environment by this
+script. Temperature 0, verified accepted by the service on Oct 25.
 Concurrency 6 with retry and backoff on 429/5xx. Resumes from existing
 output by uid, exactly like monitor.py.
 """
@@ -18,9 +19,17 @@ import urllib.error
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 
-sys.path.insert(0, "/opt/muse/skills/custom-connector-setup/bin")
+_helper_dir = os.environ.get("CONNECTOR_HELPER_DIR")
+if _helper_dir:
+    sys.path.insert(0, _helper_dir)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from dynamic_credentials import add_surrogate_to_request, read_json_response  # noqa: E402
+try:
+    from dynamic_credentials import add_surrogate_to_request, read_json_response  # noqa: E402
+except ImportError:
+    raise SystemExit(
+        "The dynamic_credentials helper was not found. Set "
+        "CONNECTOR_HELPER_DIR to the directory that provides it (the "
+        "connector helper used during the sprint).")
 import monitor as M  # noqa: E402
 
 URL = "https://openrouter.ai/api/v1/chat/completions"
